@@ -27,20 +27,22 @@ return
   }
 
 }
-var userOptions {
-  passwordCharacters: passwordCharacters, 
-  withNumbers: withNumbers,
-  withLowerCase: withLowerCase,
-  withUpperCase: withUpperCase,
-  withSymbols: withSymbols
-}
-var index = Math.floor(Math.random() * numberCharacters.length);
-var computerChoice = options[index];
 
-for (let i = 0; i < passwordCharacters; i++) {
-  let rng =[Math.floor(Math.random() * possibleCharacters.length)];
-  finalPassword = finalPassword + possibleCharacters[rng];
-}
+// var userOptions {
+//   passwordCharacters: passwordCharacters, 
+//   withNumbers: withNumbers,
+//   withLowerCase: withLowerCase,
+//   withUpperCase: withUpperCase,
+//   withSymbols: withSymbols
+// }
+// var index = Math.floor(Math.random() * numberCharacters.length);
+// var computerChoice = options[index];
+
+// for (var i = 0; i < passwordCharacters; i++) {
+//   let rng =[Math.floor(Math.random() * possibleCharacters.length)];
+//   finalPassword = finalPassword + possibleCharacters[rng];
+// }
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
