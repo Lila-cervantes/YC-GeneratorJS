@@ -22,12 +22,12 @@ return
 
   var withSymbols = confirm("Do you want symbols?");
 
-  //
+  //this is an and statment, if no variable is picked, withNumbers, withLowerCase, withUpperCasse and withSymbols, then it will alert the user.
   if(withNumbers === false && withLowerCase === false && withUpperCase === false && withSymbols === false){
     alert('Please make atleast one selection.')
     return
   }
-  else {
+  else { // var userOptions will be used in the for loop, here is where my tutor assisted me.
     var userOptions = [
       withNumbers,
       withLowerCase,
@@ -54,7 +54,7 @@ return
     return finalPassword
   }
 }
-
+//this function generates the password
 function writePassword() {
   var password = generatePassword();
   console.log('password', password);
