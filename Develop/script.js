@@ -1,9 +1,9 @@
 //Here is a list of what the password can be created out of.
-var numberCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-var symbols = [" ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "^", "`", "{", "|", "}", "~", "_", "\\"]
-
+var allCharacters = [["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+ ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+ ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
+ [" ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "^", "`", "{", "|", "}", "~", "_", "\\"],
+]
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword(){
@@ -25,27 +25,42 @@ return
     alert('Please make atleast one selection.')
     return
   }
-
+  else {
+    var userOptions = [
+      withNumbers,
+      withLowerCase,
+      withUpperCase,
+      withSymbols,
+    ]
+    // var index = Math.floor(Math.random() * numberCharacters.length);
+   
+    var possibleCharacters = [];
+    var i = 0;
+      for (let opt in userOptions) {
+        console.log(userOptions[opt]);
+        if (userOptions[opt]) {
+          possibleCharacters = [...possibleCharacters, ...allCharacters[i]];
+        }
+        i += 1;
+      }
+      console.log(possibleCharacters);
+      var finalPassword = '';
+    for (var i = 0; i < passwordCharacters; i++) {
+      var charIndex = Math.floor(Math.random() * possibleCharacters.length);
+      
+      finalPassword = finalPassword + possibleCharacters[charIndex];
+    }
+    return finalPassword
+  }
 }
 
-// var userOptions {
-//   passwordCharacters: passwordCharacters, 
-//   withNumbers: withNumbers,
-//   withLowerCase: withLowerCase,
-//   withUpperCase: withUpperCase,
-//   withSymbols: withSymbols
-// }
-// var index = Math.floor(Math.random() * numberCharacters.length);
-// var computerChoice = options[index];
 
-// for (var i = 0; i < passwordCharacters; i++) {
-//   let rng =[Math.floor(Math.random() * possibleCharacters.length)];
-//   finalPassword = finalPassword + possibleCharacters[rng];
-// }
 
 function writePassword() {
   var password = generatePassword();
+  console.log('password', password);
   var passwordText = document.querySelector("#password");
+  console.log(passwordText);
   passwordText.value = password;
 }
 
