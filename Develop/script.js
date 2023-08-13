@@ -1,4 +1,4 @@
-//Here is a list of what the password can be created out of.
+//Here is an array of what the password can consist of.
 var allCharacters = [["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
  ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
  ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
@@ -6,13 +6,14 @@ var allCharacters = [["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
 ]
 var generateBtn = document.querySelector("#generate");
 
+// this function is a prompt, asking the user the minimum and maximum requirement for the password.
 function generatePassword(){
   var passwordCharacters = prompt("Please enter the number of characters for your password: ", "8 - 128 characters");
-
+//this will allow the user to only choose between 8 OR 128 chracters. If password is less than 8 or more than 128, then it will alert the user to pick a different number.
 if (passwordCharacters < 8 || passwordCharacters > 128) {
 alert('the password is not the required length!')
 return
-} 
+} //if user has picked a number between 8 and 128 chracters, a series of comnfirms will appear.
   var withNumbers = confirm("Do you want to use numbers?");
 
   var withLowerCase = confirm("Do you want lowercase characters?");
@@ -21,6 +22,7 @@ return
 
   var withSymbols = confirm("Do you want symbols?");
 
+  //
   if(withNumbers === false && withLowerCase === false && withUpperCase === false && withSymbols === false){
     alert('Please make atleast one selection.')
     return
@@ -32,7 +34,6 @@ return
       withUpperCase,
       withSymbols,
     ]
-    // var index = Math.floor(Math.random() * numberCharacters.length);
    
     var possibleCharacters = [];
     var i = 0;
@@ -53,8 +54,6 @@ return
     return finalPassword
   }
 }
-
-
 
 function writePassword() {
   var password = generatePassword();

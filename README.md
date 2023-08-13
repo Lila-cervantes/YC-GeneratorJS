@@ -6,8 +6,10 @@ It will randomly generate a password. It contains an HTML file for the structure
 
 # Usage
 
-Open the password generator.
-The user will then click on the "Generate Password", from there it will generate a password with 8 random characters. 
+1. Open the password generator.
+2. The user will then click on the "Generate Password", from there it the user to pick from 8 to 128 special characters.
+3. A series of prompts asking if user would want a password with numbers, uppercase, lowercase letters or specials chracters. One of these prompts need to be choosen, if hit cancel on all prompts, it will then alert the user to choose at least one.
+4. If one prompt or more is selected, then it will generate a password with the number of characters the user has picked.
 
 # Files included
 
@@ -15,11 +17,18 @@ The user will then click on the "Generate Password", from there it will generate
 * Css
 * Html
 * README
+* Images
 
 # Images
+
 ![alt text](./Assets/SC-1.png)
 ![alt text](./Assets/SC-2.png)
 ![alt text](./Assets/SC-3.png)
 ![alt text](./Assets/SC-4.png)
 ![alt text](./Assets/SC-5.png)
 ![alt text](./Assets/SC-6.png)
+![alt text](./Assets/SC-7.png)
+
+# Credits
+
+Created by Yadira Cervantes with support and help from TA Jen Doyle, TA Chris Yang and tutor Jose Lopez.
