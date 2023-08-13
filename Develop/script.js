@@ -47,7 +47,7 @@ return
       console.log(possibleCharacters);
       var finalPassword = '';
 
-      //this will create the random selection of chracters
+      //this for loop will create the random selection of chracters
     for (var i = 0; i < passwordCharacters; i++) {
       var charIndex = Math.floor(Math.random() * possibleCharacters.length);
       
